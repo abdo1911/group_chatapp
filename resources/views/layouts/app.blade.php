@@ -44,7 +44,7 @@
 
         @livewireScripts
 
-        <script>
+       {{-- <script>
 
             function scrollDown() {
                 document.getElementById('chat').scrollTop =  document.getElementById('chat').scrollHeight
@@ -52,6 +52,6 @@
 
             setInterval(scrollDown, 1000);
         </script>
-
+     --}}
     </body>
 </html>

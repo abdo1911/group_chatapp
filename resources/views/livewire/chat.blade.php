@@ -2,9 +2,10 @@
     <div class="container">
         <h3 class=" text-center">
             @if (auth()->user()->email == 'pop35326@gmail.com')
-                <a class="btn btn-primary" href="{{ Url('delete_chat') }}">Delete chat</a>
+                <a class="btn btn-primary" onclick="return confirm('are you sure you want to delete this post')" href="{{ Url('delete_chat') }} ">Delete chat</a>
             @endif
             Group WEb Chat
+                <a class="btn btn-primary" href="{{ Url('online-user') }}">Online Users</a>
         </h3>
         <div class="messaging">
             <div class="inbox_msg">
@@ -47,6 +48,7 @@
                             <form wire:submit.prevent="sendMessage">
                                 <input onkeydown='scrollDown()' wire:model.defer="messageText" type="text"
                                        class="write_msg" placeholder="Type message" />
+                                @error('messageText') <span class="error" style="color: red">{{ $message }}</span> @enderror
                                 <button class="msg_send_btn" type="submit">Send</button>
                             </form>
                         </div>
